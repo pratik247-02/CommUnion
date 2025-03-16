@@ -15,6 +15,7 @@ const defaultEvents = [
   }
 ];
 
+
 const Eventspage = () => {
   const [events, setEvents] = useState(defaultEvents);
   const [newEvent, setNewEvent] = useState({ title: "", date: "", category: "", isFree: "", time: "", image: "" });
@@ -24,6 +25,10 @@ const Eventspage = () => {
     const { name, value } = e.target;
     setNewEvent((prev) => ({ ...prev, [name]: value }));
   };
+
+  const handleRemoveEvent = (index) => {
+    setEvents(events.filter((_, i) => i !== index));
+  };  
 
   const handleAddEvent = () => {
     if (Object.values(newEvent).every((val) => val.trim() !== "")) {
@@ -71,7 +76,8 @@ const Eventspage = () => {
       {/* Events Grid */}
       <Box sx={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: 3, mt: 4 }}>
         {filteredEvents.map((event, index) => (
-          <EventCard key={index} event={event} />
+          <EventCard key={index} event={event} onRemove={() => handleRemoveEvent(index)} />
+
         ))}
       </Box>
     </Box>
