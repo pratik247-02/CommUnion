@@ -6,7 +6,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Unity from "../assets/Unity.webp";
 
-const HeroSection = () => {
+const Homeepage = () => {
   const navigate = useNavigate();
 
   return (
@@ -124,7 +124,7 @@ const HeroSection = () => {
                 transform: "scale(1.05)",
               },
             }}
-            onClick={() => navigate("/events")}
+            onClick={() => navigate("/eventspage")}
           >
             Explore Events
           </Button>
@@ -134,4 +134,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default Homeepage;
