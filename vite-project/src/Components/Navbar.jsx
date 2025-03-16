@@ -9,9 +9,9 @@ import Communionlogo from '../assets/Communionlogo.png';
 import { useNavigate } from 'react-router-dom';
 
 const pages = [
-    { name: 'HOME', path: '/' },
-    { name: 'EVENTS', path: '/eventspage' },
-    { name: 'ABOUT', path: '/about' },
+    { name: 'Home >', path: '/' },
+    { name: 'Events >', path: '/eventspage' },
+    { name: 'About >', path: '/about' },
   ];
   
   function ResponsiveAppBar() {
@@ -35,10 +35,8 @@ const pages = [
                 }} 
                 onClick={() => handleNavigate('/')}
             />
-
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
         
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
+          <Box sx={{ flexGrow: 1, display: { xs: ' ', md: 'flex' }, justifyContent: 'flex-end' }}>
             {pages.map((page) => (
               <Button
                 key={page.name}
